@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -216,7 +218,8 @@
     <div id="contact" class="container">
         <h3 class="text-center">Contact</h3>
         <p class="text-center"><em>We love our fans!</em></p>
-        <div class="row test">
+
+        <div class="row">
             <div class="col-md-4">
                 <p>Fan? Drop a note.</p>
                 <p><span class="glyphicon glyphicon-map-marker"></span>Chicago, US</p>
@@ -233,6 +236,7 @@
                     </div>
                 </div>
                 <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+                <br>
                 <div class="row">
                     <div class="col-md-12 form-group">
                         <button class="btn pull-right" type="submit">Send</button>
@@ -240,70 +244,72 @@
                 </div>
             </div>
         </div>
+        <br>
+        <h3 class="text-center">From The Blog</h3>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Mike</a></li>
+            <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
+            <li><a data-toggle="tab" href="#menu2">Peter</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h2>Mike Ross, Manager</h2>
+                <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <h2>Chandler Bing, Guitarist</h2>
+                <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <h2>Peter Griffin, Bass player</h2>
+                <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+            </div>
+        </div>
     </div>
 
-    <h3 class="text-center">From The Blog</h3>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#home">Mike</a></li>
-        <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
-        <li><a data-toggle="tab" href="#menu2">Peter</a></li>
-    </ul>
+    <footer class="text-center">
+        <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a><br><br>
+        <p>By <a href="https://www.thebandclub.com" data-toggle="tooltip"
+                title="Visit the band club">www.thebandclub.com</a></p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            // Initialize Tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+    </script>
 
-    <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
-            <h2>Mike Ross, Manager</h2>
-            <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
-        </div>
-        <div id="menu1" class="tab-pane fade">
-            <h2>Chandler Bing, Guitarist</h2>
-            <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
-        </div>
-        <div id="menu2" class="tab-pane fade">
-            <h2>Peter Griffin, Bass player</h2>
-            <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
-        </div>
-    </div>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        })
+    </script>
+
 </body>
-<footer class="text-center">
-    <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-        <span class="glyphicon glyphicon-chevron-up"></span>
-    </a><br><br>
-    <p>By <a href="https://www.thebandclub.com" data-toggle="tooltip"
-            title="Visit the band club">www.thebandclub.com</a></p>
-</footer>
-<script>
-    $(document).ready(function () {
-        // Initialize Tooltip
-        $('[data-toggle="tooltip"]').tooltip();
-    })
-</script>
-
-<script>
-    $(document).ready(function () {
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 900, function () {
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
-        });
-    })
-</script>
 
 </html>
